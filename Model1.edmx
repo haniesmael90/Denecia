@@ -1,0 +1,1510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="deneciaEntities.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="deneciaEntitiesStoreContainer">
+          <EntitySet Name="attendance" EntityType="deneciaEntities.Store.attendance" store:Type="Tables" Schema="denisya" />
+          <EntitySet Name="cage" EntityType="deneciaEntities.Store.cage" store:Type="Tables" Schema="denisya" />
+          <EntitySet Name="cagedetails" EntityType="deneciaEntities.Store.cagedetails" store:Type="Tables" Schema="denisya" />
+          <EntitySet Name="checklist" EntityType="deneciaEntities.Store.checklist" store:Type="Tables" Schema="denisya" />
+          <EntitySet Name="employee" EntityType="deneciaEntities.Store.employee" store:Type="Tables" Schema="denisya" />
+          <EntitySet Name="feed" EntityType="deneciaEntities.Store.feed" store:Type="Tables" Schema="denisya" />
+          <EntitySet Name="messages" EntityType="deneciaEntities.Store.messages" store:Type="Tables" Schema="denisya" />
+          <EntitySet Name="orderpurchase" EntityType="deneciaEntities.Store.orderpurchase" store:Type="Tables" Schema="denisya" />
+          <EntitySet Name="ordersales" EntityType="deneciaEntities.Store.ordersales" store:Type="Tables" Schema="denisya" />
+          <EntitySet Name="productdetails" EntityType="deneciaEntities.Store.productdetails" store:Type="Tables" Schema="denisya" />
+          <EntitySet Name="products" EntityType="deneciaEntities.Store.products" store:Type="Tables" Schema="denisya" />
+          <EntitySet Name="qtype" EntityType="deneciaEntities.Store.qtype" store:Type="Tables" Schema="denisya" />
+          <EntitySet Name="qualitydet" EntityType="deneciaEntities.Store.qualitydet" store:Type="Tables" Schema="denisya" />
+          <EntitySet Name="qualityofwater" EntityType="deneciaEntities.Store.qualityofwater" store:Type="Tables" Schema="denisya" />
+          <EntitySet Name="stock" EntityType="deneciaEntities.Store.stock" store:Type="Tables" Schema="denisya" />
+          <EntitySet Name="tasks" EntityType="deneciaEntities.Store.tasks" store:Type="Tables" Schema="denisya" />
+          <EntitySet Name="todolist" EntityType="deneciaEntities.Store.todolist" store:Type="Tables" Schema="denisya" />
+          <EntitySet Name="warehousepurchase" EntityType="deneciaEntities.Store.warehousepurchase" store:Type="Tables" Schema="denisya" />
+          <EntitySet Name="warehousesales" EntityType="deneciaEntities.Store.warehousesales" store:Type="Tables" Schema="denisya" />
+          <EntitySet Name="vw_msg" EntityType="deneciaEntities.Store.vw_msg" store:Type="Views" store:Schema="denisya" store:Name="vw_msg">
+            <DefiningQuery>SELECT 
+      [vw_msg].[code] AS [code], 
+      [vw_msg].[fromcode] AS [fromcode], 
+      [vw_msg].[tocode] AS [tocode], 
+      [vw_msg].[toname] AS [toname]
+      FROM [denisya].[vw_msg] AS [vw_msg]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__attendanc__empti__160F4887" Association="deneciaEntities.Store.FK__attendanc__empti__160F4887">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="attendance" EntitySet="attendance" />
+          </AssociationSet>
+          <AssociationSet Name="FK__attendanc__super__17036CC0" Association="deneciaEntities.Store.FK__attendanc__super__17036CC0">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="attendance" EntitySet="attendance" />
+          </AssociationSet>
+          <AssociationSet Name="FK__cage__feed__5070F446" Association="deneciaEntities.Store.FK__cage__feed__5070F446">
+            <End Role="feed" EntitySet="feed" />
+            <End Role="cage" EntitySet="cage" />
+          </AssociationSet>
+          <AssociationSet Name="FK__cagedetail__cage__534D60F1" Association="deneciaEntities.Store.FK__cagedetail__cage__534D60F1">
+            <End Role="cage" EntitySet="cage" />
+            <End Role="cagedetails" EntitySet="cagedetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__cagedetail__feed__5441852A" Association="deneciaEntities.Store.FK__cagedetail__feed__5441852A">
+            <End Role="feed" EntitySet="feed" />
+            <End Role="cagedetails" EntitySet="cagedetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__messages__msgfro__4AB81AF0" Association="deneciaEntities.Store.FK__messages__msgfro__4AB81AF0">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="messages" EntitySet="messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__messages__msgto__4BAC3F29" Association="deneciaEntities.Store.FK__messages__msgto__4BAC3F29">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="messages" EntitySet="messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__orderpurc__prodi__0E6E26BF" Association="deneciaEntities.Store.FK__orderpurc__prodi__0E6E26BF">
+            <End Role="products" EntitySet="products" />
+            <End Role="orderpurchase" EntitySet="orderpurchase" />
+          </AssociationSet>
+          <AssociationSet Name="FK__orderpurcha__emp__0F624AF8" Association="deneciaEntities.Store.FK__orderpurcha__emp__0F624AF8">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="orderpurchase" EntitySet="orderpurchase" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ordersale__empid__1332DBDC" Association="deneciaEntities.Store.FK__ordersale__empid__1332DBDC">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="ordersales" EntitySet="ordersales" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ordersale__produ__123EB7A3" Association="deneciaEntities.Store.FK__ordersale__produ__123EB7A3">
+            <End Role="products" EntitySet="products" />
+            <End Role="ordersales" EntitySet="ordersales" />
+          </AssociationSet>
+          <AssociationSet Name="FK__products__catego__6FE99F9F" Association="deneciaEntities.Store.FK__products__catego__6FE99F9F">
+            <End Role="productdetails" EntitySet="productdetails" />
+            <End Role="products" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__products__manufa__71D1E811" Association="deneciaEntities.Store.FK__products__manufa__71D1E811">
+            <End Role="productdetails" EntitySet="productdetails" />
+            <End Role="products" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__products__model__6EF57B66" Association="deneciaEntities.Store.FK__products__model__6EF57B66">
+            <End Role="productdetails" EntitySet="productdetails" />
+            <End Role="products" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__products__vendor__70DDC3D8" Association="deneciaEntities.Store.FK__products__vendor__70DDC3D8">
+            <End Role="productdetails" EntitySet="productdetails" />
+            <End Role="products" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__qualityof__quali__1CBC4616" Association="deneciaEntities.Store.FK__qualityof__quali__1CBC4616">
+            <End Role="qtype" EntitySet="qtype" />
+            <End Role="qualityofwater" EntitySet="qualityofwater" />
+          </AssociationSet>
+          <AssociationSet Name="FK__qualityofw__cage__1BC821DD" Association="deneciaEntities.Store.FK__qualityofw__cage__1BC821DD">
+            <End Role="cage" EntitySet="cage" />
+            <End Role="qualityofwater" EntitySet="qualityofwater" />
+          </AssociationSet>
+          <AssociationSet Name="FK__stock__productid__03F0984C" Association="deneciaEntities.Store.FK__stock__productid__03F0984C">
+            <End Role="products" EntitySet="products" />
+            <End Role="stock" EntitySet="stock" />
+          </AssociationSet>
+          <AssociationSet Name="FK__warehouse__empid__0B91BA14" Association="deneciaEntities.Store.FK__warehouse__empid__0B91BA14">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="warehousesales" EntitySet="warehousesales" />
+          </AssociationSet>
+          <AssociationSet Name="FK__warehouse__prodi__06CD04F7" Association="deneciaEntities.Store.FK__warehouse__prodi__06CD04F7">
+            <End Role="products" EntitySet="products" />
+            <End Role="warehousepurchase" EntitySet="warehousepurchase" />
+          </AssociationSet>
+          <AssociationSet Name="FK__warehouse__produ__0A9D95DB" Association="deneciaEntities.Store.FK__warehouse__produ__0A9D95DB">
+            <End Role="products" EntitySet="products" />
+            <End Role="warehousesales" EntitySet="warehousesales" />
+          </AssociationSet>
+          <AssociationSet Name="FK__warehousepu__emp__07C12930" Association="deneciaEntities.Store.FK__warehousepu__emp__07C12930">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="warehousepurchase" EntitySet="warehousepurchase" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="attendance">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="emptime" Type="int" />
+          <Property Name="empstatus" Type="nvarchar" MaxLength="900" />
+          <Property Name="supervisorname" Type="int" />
+          <Property Name="adddate" Type="datetime" />
+          <Property Name="notes" Type="nvarchar" MaxLength="900" />
+          <Property Name="times" Type="time" />
+        </EntityType>
+        <EntityType Name="cage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" MaxLength="900" />
+          <Property Name="feed" Type="int" />
+          <Property Name="sources" Type="float" />
+          <Property Name="gainedfish" Type="float" />
+          <Property Name="notes" Type="nvarchar(max)" />
+          <Property Name="dates" Type="date" />
+          <Property Name="times" Type="time" />
+        </EntityType>
+        <EntityType Name="cagedetails">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="cage" Type="int" />
+          <Property Name="feed" Type="int" />
+          <Property Name="lostfish" Type="float" />
+          <Property Name="gainedfish" Type="float" />
+          <Property Name="weights" Type="float" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="notes" Type="nvarchar(max)" />
+          <Property Name="dates" Type="date" />
+          <Property Name="times" Type="time" />
+        </EntityType>
+        <EntityType Name="checklist">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="listitem" Type="nvarchar(max)" />
+          <Property Name="isdone" Type="bit" />
+          <Property Name="itemdate" Type="date" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" MaxLength="300" />
+          <Property Name="pw" Type="nvarchar" MaxLength="900" />
+          <Property Name="telephone" Type="nvarchar" MaxLength="15" />
+          <Property Name="cellphone" Type="nvarchar" MaxLength="15" />
+          <Property Name="salary" Type="float" />
+          <Property Name="hdate" Type="date" />
+          <Property Name="jobtitle" Type="nvarchar" MaxLength="900" />
+          <Property Name="email" Type="nvarchar" MaxLength="900" />
+          <Property Name="notes" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="feed">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" MaxLength="900" />
+        </EntityType>
+        <EntityType Name="messages">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="msgfrom" Type="int" />
+          <Property Name="msgto" Type="int" />
+          <Property Name="msgsubject" Type="nvarchar" MaxLength="900" />
+          <Property Name="messages" Type="nvarchar(max)" />
+          <Property Name="msgdate" Type="date" />
+        </EntityType>
+        <EntityType Name="orderpurchase">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="prodid" Type="int" />
+          <Property Name="reason" Type="nvarchar(max)" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="totalprice" Type="float" />
+          <Property Name="notes" Type="nvarchar(max)" />
+          <Property Name="emp" Type="int" />
+          <Property Name="adddate" Type="date" />
+        </EntityType>
+        <EntityType Name="ordersales">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="productid" Type="int" />
+          <Property Name="reason" Type="nvarchar(max)" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="totalprice" Type="float" />
+          <Property Name="empid" Type="int" />
+          <Property Name="notes" Type="nvarchar(max)" />
+          <Property Name="addate" Type="date" />
+        </EntityType>
+        <EntityType Name="productdetails">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="model" Type="nvarchar" MaxLength="900" />
+          <Property Name="category" Type="nvarchar" MaxLength="900" />
+          <Property Name="vendor" Type="nvarchar" MaxLength="900" />
+          <Property Name="manufacturer" Type="nvarchar" MaxLength="900" />
+        </EntityType>
+        <EntityType Name="products">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" MaxLength="900" />
+          <Property Name="unitprice" Type="float" />
+          <Property Name="model" Type="int" />
+          <Property Name="category" Type="int" />
+          <Property Name="vendor" Type="int" />
+          <Property Name="manufacturer" Type="int" />
+          <Property Name="notes" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="qtype">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="types" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="qualitydet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" MaxLength="900" />
+        </EntityType>
+        <EntityType Name="qualityofwater">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="cage" Type="int" />
+          <Property Name="watercolor" Type="nvarchar" MaxLength="900" />
+          <Property Name="qualitydet" Type="int" />
+          <Property Name="adddate" Type="date" />
+        </EntityType>
+        <EntityType Name="stock">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="productid" Type="int" />
+          <Property Name="quantity" Type="float" />
+        </EntityType>
+        <EntityType Name="tasks">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="nvarchar" MaxLength="500" />
+          <Property Name="messages" Type="nvarchar(max)" />
+          <Property Name="taskdate" Type="date" />
+        </EntityType>
+        <EntityType Name="todolist">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="startdate" Type="datetime" />
+          <Property Name="enddate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="warehousepurchase">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="prodid" Type="int" />
+          <Property Name="reason" Type="nvarchar(max)" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="totalprice" Type="float" />
+          <Property Name="notes" Type="nvarchar(max)" />
+          <Property Name="emp" Type="int" />
+          <Property Name="adddate" Type="date" />
+        </EntityType>
+        <EntityType Name="warehousesales">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="productid" Type="int" />
+          <Property Name="reason" Type="nvarchar(max)" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="totalprice" Type="float" />
+          <Property Name="empid" Type="int" />
+          <Property Name="notes" Type="nvarchar(max)" />
+          <Property Name="addate" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'm78782502_denisya.denisya.vw_msg' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_msg">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="int" Nullable="false" />
+          <Property Name="fromcode" Type="int" />
+          <Property Name="tocode" Type="int" />
+          <Property Name="toname" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <Association Name="FK__attendanc__empti__160F4887">
+          <End Role="employee" Type="deneciaEntities.Store.employee" Multiplicity="0..1" />
+          <End Role="attendance" Type="deneciaEntities.Store.attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="attendance">
+              <PropertyRef Name="emptime" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__attendanc__super__17036CC0">
+          <End Role="employee" Type="deneciaEntities.Store.employee" Multiplicity="0..1" />
+          <End Role="attendance" Type="deneciaEntities.Store.attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="attendance">
+              <PropertyRef Name="supervisorname" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__cage__feed__5070F446">
+          <End Role="feed" Type="deneciaEntities.Store.feed" Multiplicity="0..1" />
+          <End Role="cage" Type="deneciaEntities.Store.cage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="feed">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cage">
+              <PropertyRef Name="feed" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__cagedetail__cage__534D60F1">
+          <End Role="cage" Type="deneciaEntities.Store.cage" Multiplicity="0..1" />
+          <End Role="cagedetails" Type="deneciaEntities.Store.cagedetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cage">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cagedetails">
+              <PropertyRef Name="cage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__cagedetail__feed__5441852A">
+          <End Role="feed" Type="deneciaEntities.Store.feed" Multiplicity="0..1" />
+          <End Role="cagedetails" Type="deneciaEntities.Store.cagedetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="feed">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cagedetails">
+              <PropertyRef Name="feed" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__messages__msgfro__4AB81AF0">
+          <End Role="employee" Type="deneciaEntities.Store.employee" Multiplicity="0..1" />
+          <End Role="messages" Type="deneciaEntities.Store.messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="messages">
+              <PropertyRef Name="msgfrom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__messages__msgto__4BAC3F29">
+          <End Role="employee" Type="deneciaEntities.Store.employee" Multiplicity="0..1" />
+          <End Role="messages" Type="deneciaEntities.Store.messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="messages">
+              <PropertyRef Name="msgto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__orderpurc__prodi__0E6E26BF">
+          <End Role="products" Type="deneciaEntities.Store.products" Multiplicity="0..1" />
+          <End Role="orderpurchase" Type="deneciaEntities.Store.orderpurchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="orderpurchase">
+              <PropertyRef Name="prodid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__orderpurcha__emp__0F624AF8">
+          <End Role="employee" Type="deneciaEntities.Store.employee" Multiplicity="0..1" />
+          <End Role="orderpurchase" Type="deneciaEntities.Store.orderpurchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="orderpurchase">
+              <PropertyRef Name="emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ordersale__empid__1332DBDC">
+          <End Role="employee" Type="deneciaEntities.Store.employee" Multiplicity="0..1" />
+          <End Role="ordersales" Type="deneciaEntities.Store.ordersales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ordersales">
+              <PropertyRef Name="empid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ordersale__produ__123EB7A3">
+          <End Role="products" Type="deneciaEntities.Store.products" Multiplicity="0..1" />
+          <End Role="ordersales" Type="deneciaEntities.Store.ordersales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ordersales">
+              <PropertyRef Name="productid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__products__catego__6FE99F9F">
+          <End Role="productdetails" Type="deneciaEntities.Store.productdetails" Multiplicity="0..1" />
+          <End Role="products" Type="deneciaEntities.Store.products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productdetails">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="products">
+              <PropertyRef Name="category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__products__manufa__71D1E811">
+          <End Role="productdetails" Type="deneciaEntities.Store.productdetails" Multiplicity="0..1" />
+          <End Role="products" Type="deneciaEntities.Store.products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productdetails">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="products">
+              <PropertyRef Name="manufacturer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__products__model__6EF57B66">
+          <End Role="productdetails" Type="deneciaEntities.Store.productdetails" Multiplicity="0..1" />
+          <End Role="products" Type="deneciaEntities.Store.products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productdetails">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="products">
+              <PropertyRef Name="model" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__products__vendor__70DDC3D8">
+          <End Role="productdetails" Type="deneciaEntities.Store.productdetails" Multiplicity="0..1" />
+          <End Role="products" Type="deneciaEntities.Store.products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productdetails">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="products">
+              <PropertyRef Name="vendor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__qualityof__quali__1CBC4616">
+          <End Role="qtype" Type="deneciaEntities.Store.qtype" Multiplicity="0..1" />
+          <End Role="qualityofwater" Type="deneciaEntities.Store.qualityofwater" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="qtype">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="qualityofwater">
+              <PropertyRef Name="qualitydet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__qualityofw__cage__1BC821DD">
+          <End Role="cage" Type="deneciaEntities.Store.cage" Multiplicity="0..1" />
+          <End Role="qualityofwater" Type="deneciaEntities.Store.qualityofwater" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cage">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="qualityofwater">
+              <PropertyRef Name="cage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__stock__productid__03F0984C">
+          <End Role="products" Type="deneciaEntities.Store.products" Multiplicity="0..1" />
+          <End Role="stock" Type="deneciaEntities.Store.stock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="stock">
+              <PropertyRef Name="productid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__warehouse__empid__0B91BA14">
+          <End Role="employee" Type="deneciaEntities.Store.employee" Multiplicity="0..1" />
+          <End Role="warehousesales" Type="deneciaEntities.Store.warehousesales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="warehousesales">
+              <PropertyRef Name="empid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__warehouse__prodi__06CD04F7">
+          <End Role="products" Type="deneciaEntities.Store.products" Multiplicity="0..1" />
+          <End Role="warehousepurchase" Type="deneciaEntities.Store.warehousepurchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="warehousepurchase">
+              <PropertyRef Name="prodid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__warehouse__produ__0A9D95DB">
+          <End Role="products" Type="deneciaEntities.Store.products" Multiplicity="0..1" />
+          <End Role="warehousesales" Type="deneciaEntities.Store.warehousesales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="warehousesales">
+              <PropertyRef Name="productid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__warehousepu__emp__07C12930">
+          <End Role="employee" Type="deneciaEntities.Store.employee" Multiplicity="0..1" />
+          <End Role="warehousepurchase" Type="deneciaEntities.Store.warehousepurchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="warehousepurchase">
+              <PropertyRef Name="emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="deneciaEntities1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="deneciaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="attendance" EntityType="deneciaEntities1.attendance" />
+          <EntitySet Name="cage" EntityType="deneciaEntities1.cage" />
+          <EntitySet Name="cagedetails" EntityType="deneciaEntities1.cagedetails" />
+          <EntitySet Name="employee" EntityType="deneciaEntities1.employee" />
+          <EntitySet Name="feed" EntityType="deneciaEntities1.feed" />
+          <EntitySet Name="messages" EntityType="deneciaEntities1.messages" />
+          <EntitySet Name="productdetails" EntityType="deneciaEntities1.productdetails" />
+          <EntitySet Name="products" EntityType="deneciaEntities1.products" />
+          <EntitySet Name="qualitydet" EntityType="deneciaEntities1.qualitydet" />
+          <EntitySet Name="stock" EntityType="deneciaEntities1.stock" />
+          <EntitySet Name="tasks" EntityType="deneciaEntities1.tasks" />
+          <EntitySet Name="vw_msg" EntityType="deneciaEntities1.vw_msg" />
+          <AssociationSet Name="FK__attendanc__empti__571DF1D5" Association="deneciaEntities1.FK__attendanc__empti__571DF1D5">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="attendance" EntitySet="attendance" />
+          </AssociationSet>
+          <AssociationSet Name="FK__attendanc__super__5812160E" Association="deneciaEntities1.FK__attendanc__super__5812160E">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="attendance" EntitySet="attendance" />
+          </AssociationSet>
+          <AssociationSet Name="FK__cage__feed__5070F446" Association="deneciaEntities1.FK__cage__feed__5070F446">
+            <End Role="feed" EntitySet="feed" />
+            <End Role="cage" EntitySet="cage" />
+          </AssociationSet>
+          <AssociationSet Name="FK__cagedetail__cage__534D60F1" Association="deneciaEntities1.FK__cagedetail__cage__534D60F1">
+            <End Role="cage" EntitySet="cage" />
+            <End Role="cagedetails" EntitySet="cagedetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__cagedetail__feed__5441852A" Association="deneciaEntities1.FK__cagedetail__feed__5441852A">
+            <End Role="feed" EntitySet="feed" />
+            <End Role="cagedetails" EntitySet="cagedetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__messages__msgfro__4AB81AF0" Association="deneciaEntities1.FK__messages__msgfro__4AB81AF0">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="messages" EntitySet="messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__messages__msgto__4BAC3F29" Association="deneciaEntities1.FK__messages__msgto__4BAC3F29">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="messages" EntitySet="messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__products__catego__6FE99F9F" Association="deneciaEntities1.FK__products__catego__6FE99F9F">
+            <End Role="productdetails" EntitySet="productdetails" />
+            <End Role="products" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__products__manufa__71D1E811" Association="deneciaEntities1.FK__products__manufa__71D1E811">
+            <End Role="productdetails" EntitySet="productdetails" />
+            <End Role="products" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__products__model__6EF57B66" Association="deneciaEntities1.FK__products__model__6EF57B66">
+            <End Role="productdetails" EntitySet="productdetails" />
+            <End Role="products" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__products__vendor__70DDC3D8" Association="deneciaEntities1.FK__products__vendor__70DDC3D8">
+            <End Role="productdetails" EntitySet="productdetails" />
+            <End Role="products" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__stock__productid__03F0984C" Association="deneciaEntities1.FK__stock__productid__03F0984C">
+            <End Role="products" EntitySet="products" />
+            <End Role="stock" EntitySet="stock" />
+          </AssociationSet>
+          <EntitySet Name="orderpurchase" EntityType="deneciaEntities1.orderpurchase" />
+          <EntitySet Name="ordersales" EntityType="deneciaEntities1.ordersales" />
+          <EntitySet Name="warehousepurchase" EntityType="deneciaEntities1.warehousepurchase" />
+          <EntitySet Name="warehousesales" EntityType="deneciaEntities1.warehousesales" />
+          <AssociationSet Name="FK__orderpurcha__emp__0F624AF8" Association="deneciaEntities1.FK__orderpurcha__emp__0F624AF8">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="orderpurchase" EntitySet="orderpurchase" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ordersale__empid__1332DBDC" Association="deneciaEntities1.FK__ordersale__empid__1332DBDC">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="ordersales" EntitySet="ordersales" />
+          </AssociationSet>
+          <AssociationSet Name="FK__warehouse__empid__0B91BA14" Association="deneciaEntities1.FK__warehouse__empid__0B91BA14">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="warehousesales" EntitySet="warehousesales" />
+          </AssociationSet>
+          <AssociationSet Name="FK__warehousepu__emp__07C12930" Association="deneciaEntities1.FK__warehousepu__emp__07C12930">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="warehousepurchase" EntitySet="warehousepurchase" />
+          </AssociationSet>
+          <AssociationSet Name="FK__orderpurc__prodi__0E6E26BF" Association="deneciaEntities1.FK__orderpurc__prodi__0E6E26BF">
+            <End Role="products" EntitySet="products" />
+            <End Role="orderpurchase" EntitySet="orderpurchase" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ordersale__produ__123EB7A3" Association="deneciaEntities1.FK__ordersale__produ__123EB7A3">
+            <End Role="products" EntitySet="products" />
+            <End Role="ordersales" EntitySet="ordersales" />
+          </AssociationSet>
+          <AssociationSet Name="FK__warehouse__prodi__06CD04F7" Association="deneciaEntities1.FK__warehouse__prodi__06CD04F7">
+            <End Role="products" EntitySet="products" />
+            <End Role="warehousepurchase" EntitySet="warehousepurchase" />
+          </AssociationSet>
+          <AssociationSet Name="FK__warehouse__produ__0A9D95DB" Association="deneciaEntities1.FK__warehouse__produ__0A9D95DB">
+            <End Role="products" EntitySet="products" />
+            <End Role="warehousesales" EntitySet="warehousesales" />
+          </AssociationSet>
+          <EntitySet Name="qtype" EntityType="deneciaEntities1.qtype" />
+          <EntitySet Name="qualityofwater" EntityType="deneciaEntities1.qualityofwater" />
+          <AssociationSet Name="FK__qualityofw__cage__1BC821DD" Association="deneciaEntities1.FK__qualityofw__cage__1BC821DD">
+            <End Role="cage" EntitySet="cage" />
+            <End Role="qualityofwater" EntitySet="qualityofwater" />
+          </AssociationSet>
+          <AssociationSet Name="FK__qualityof__quali__1CBC4616" Association="deneciaEntities1.FK__qualityof__quali__1CBC4616">
+            <End Role="qtype" EntitySet="qtype" />
+            <End Role="qualityofwater" EntitySet="qualityofwater" />
+          </AssociationSet>
+          <EntitySet Name="checklist" EntityType="deneciaEntities1.checklist" />
+          <EntitySet Name="todolist" EntityType="deneciaEntities1.todolist" />
+        </EntityContainer>
+        <EntityType Name="attendance">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="emptime" />
+          <Property Type="String" Name="empstatus" MaxLength="900" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="supervisorname" />
+          <Property Type="DateTime" Name="adddate" Precision="3" />
+          <Property Type="String" Name="notes" MaxLength="900" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="employee" Relationship="deneciaEntities1.FK__attendanc__empti__571DF1D5" FromRole="attendance" ToRole="employee" />
+          <NavigationProperty Name="employee1" Relationship="deneciaEntities1.FK__attendanc__super__5812160E" FromRole="attendance" ToRole="employee" />
+          <Property Type="Time" Name="times" Precision="7" />
+        </EntityType>
+        <EntityType Name="cage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" MaxLength="900" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="feed" />
+          <Property Type="Double" Name="sources" />
+          <Property Type="Double" Name="gainedfish" />
+          <Property Type="String" Name="notes" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="dates" Precision="0" />
+          <Property Type="Time" Name="times" Precision="7" />
+          <NavigationProperty Name="feed1" Relationship="deneciaEntities1.FK__cage__feed__5070F446" FromRole="cage" ToRole="feed" />
+          <NavigationProperty Name="cagedetails" Relationship="deneciaEntities1.FK__cagedetail__cage__534D60F1" FromRole="cage" ToRole="cagedetails" />
+          <NavigationProperty Name="qualityofwater" Relationship="deneciaEntities1.FK__qualityofw__cage__1BC821DD" FromRole="cage" ToRole="qualityofwater" />
+        </EntityType>
+        <EntityType Name="cagedetails">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="cage" />
+          <Property Type="Int32" Name="feed" />
+          <Property Type="Double" Name="lostfish" />
+          <Property Type="Double" Name="gainedfish" />
+          <Property Type="Double" Name="weights" />
+          <Property Type="Int32" Name="quantity" />
+          <Property Type="String" Name="notes" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="dates" Precision="0" />
+          <Property Type="Time" Name="times" Precision="7" />
+          <NavigationProperty Name="cage1" Relationship="deneciaEntities1.FK__cagedetail__cage__534D60F1" FromRole="cagedetails" ToRole="cage" />
+          <NavigationProperty Name="feed1" Relationship="deneciaEntities1.FK__cagedetail__feed__5441852A" FromRole="cagedetails" ToRole="feed" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="pw" MaxLength="900" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="telephone" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="cellphone" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="salary" />
+          <Property Type="DateTime" Name="hdate" Precision="0" />
+          <Property Type="String" Name="jobtitle" MaxLength="900" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="email" MaxLength="900" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="notes" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="attendance" Relationship="deneciaEntities1.FK__attendanc__empti__571DF1D5" FromRole="employee" ToRole="attendance" />
+          <NavigationProperty Name="attendance1" Relationship="deneciaEntities1.FK__attendanc__super__5812160E" FromRole="employee" ToRole="attendance" />
+          <NavigationProperty Name="messages" Relationship="deneciaEntities1.FK__messages__msgfro__4AB81AF0" FromRole="employee" ToRole="messages" />
+          <NavigationProperty Name="messages1" Relationship="deneciaEntities1.FK__messages__msgto__4BAC3F29" FromRole="employee" ToRole="messages" />
+          <NavigationProperty Name="orderpurchase" Relationship="deneciaEntities1.FK__orderpurcha__emp__0F624AF8" FromRole="employee" ToRole="orderpurchase" />
+          <NavigationProperty Name="ordersales" Relationship="deneciaEntities1.FK__ordersale__empid__1332DBDC" FromRole="employee" ToRole="ordersales" />
+          <NavigationProperty Name="warehousesales" Relationship="deneciaEntities1.FK__warehouse__empid__0B91BA14" FromRole="employee" ToRole="warehousesales" />
+          <NavigationProperty Name="warehousepurchase" Relationship="deneciaEntities1.FK__warehousepu__emp__07C12930" FromRole="employee" ToRole="warehousepurchase" />
+        </EntityType>
+        <EntityType Name="feed">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" MaxLength="900" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="cage" Relationship="deneciaEntities1.FK__cage__feed__5070F446" FromRole="feed" ToRole="cage" />
+          <NavigationProperty Name="cagedetails" Relationship="deneciaEntities1.FK__cagedetail__feed__5441852A" FromRole="feed" ToRole="cagedetails" />
+        </EntityType>
+        <EntityType Name="messages">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="msgfrom" />
+          <Property Type="Int32" Name="msgto" />
+          <Property Type="String" Name="msgsubject" MaxLength="900" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="messages1" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="msgdate" Precision="0" />
+          <NavigationProperty Name="employee" Relationship="deneciaEntities1.FK__messages__msgfro__4AB81AF0" FromRole="messages" ToRole="employee" />
+          <NavigationProperty Name="employee1" Relationship="deneciaEntities1.FK__messages__msgto__4BAC3F29" FromRole="messages" ToRole="employee" />
+        </EntityType>
+        <EntityType Name="productdetails">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="model" MaxLength="900" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="category" MaxLength="900" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="vendor" MaxLength="900" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="manufacturer" MaxLength="900" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="products" Relationship="deneciaEntities1.FK__products__catego__6FE99F9F" FromRole="productdetails" ToRole="products" />
+          <NavigationProperty Name="products1" Relationship="deneciaEntities1.FK__products__manufa__71D1E811" FromRole="productdetails" ToRole="products" />
+          <NavigationProperty Name="products2" Relationship="deneciaEntities1.FK__products__model__6EF57B66" FromRole="productdetails" ToRole="products" />
+          <NavigationProperty Name="products3" Relationship="deneciaEntities1.FK__products__vendor__70DDC3D8" FromRole="productdetails" ToRole="products" />
+        </EntityType>
+        <EntityType Name="products">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" MaxLength="900" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="unitprice" />
+          <Property Type="Int32" Name="model" />
+          <Property Type="Int32" Name="category" />
+          <Property Type="Int32" Name="vendor" />
+          <Property Type="Int32" Name="manufacturer" />
+          <Property Type="String" Name="notes" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="productdetails" Relationship="deneciaEntities1.FK__products__catego__6FE99F9F" FromRole="products" ToRole="productdetails" />
+          <NavigationProperty Name="productdetails1" Relationship="deneciaEntities1.FK__products__manufa__71D1E811" FromRole="products" ToRole="productdetails" />
+          <NavigationProperty Name="productdetails2" Relationship="deneciaEntities1.FK__products__model__6EF57B66" FromRole="products" ToRole="productdetails" />
+          <NavigationProperty Name="productdetails3" Relationship="deneciaEntities1.FK__products__vendor__70DDC3D8" FromRole="products" ToRole="productdetails" />
+          <NavigationProperty Name="stock" Relationship="deneciaEntities1.FK__stock__productid__03F0984C" FromRole="products" ToRole="stock" />
+          <NavigationProperty Name="orderpurchase" Relationship="deneciaEntities1.FK__orderpurc__prodi__0E6E26BF" FromRole="products" ToRole="orderpurchase" />
+          <NavigationProperty Name="ordersales" Relationship="deneciaEntities1.FK__ordersale__produ__123EB7A3" FromRole="products" ToRole="ordersales" />
+          <NavigationProperty Name="warehousepurchase" Relationship="deneciaEntities1.FK__warehouse__prodi__06CD04F7" FromRole="products" ToRole="warehousepurchase" />
+          <NavigationProperty Name="warehousesales" Relationship="deneciaEntities1.FK__warehouse__produ__0A9D95DB" FromRole="products" ToRole="warehousesales" />
+        </EntityType>
+        <EntityType Name="qualitydet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" MaxLength="900" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="stock">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="productid" />
+          <Property Type="Double" Name="quantity" />
+          <NavigationProperty Name="products" Relationship="deneciaEntities1.FK__stock__productid__03F0984C" FromRole="stock" ToRole="products" />
+        </EntityType>
+        <EntityType Name="tasks">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="title" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="messages" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="taskdate" Precision="0" />
+        </EntityType>
+        <EntityType Name="vw_msg">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Type="Int32" Name="code" Nullable="false" />
+          <Property Type="Int32" Name="fromcode" />
+          <Property Type="Int32" Name="tocode" />
+          <Property Type="String" Name="toname" MaxLength="300" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK__attendanc__empti__571DF1D5">
+          <End Type="deneciaEntities1.employee" Role="employee" Multiplicity="0..1" />
+          <End Type="deneciaEntities1.attendance" Role="attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="attendance">
+              <PropertyRef Name="emptime" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__attendanc__super__5812160E">
+          <End Type="deneciaEntities1.employee" Role="employee" Multiplicity="0..1" />
+          <End Type="deneciaEntities1.attendance" Role="attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="attendance">
+              <PropertyRef Name="supervisorname" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__cage__feed__5070F446">
+          <End Type="deneciaEntities1.feed" Role="feed" Multiplicity="0..1" />
+          <End Type="deneciaEntities1.cage" Role="cage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="feed">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cage">
+              <PropertyRef Name="feed" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__cagedetail__cage__534D60F1">
+          <End Type="deneciaEntities1.cage" Role="cage" Multiplicity="0..1" />
+          <End Type="deneciaEntities1.cagedetails" Role="cagedetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cage">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cagedetails">
+              <PropertyRef Name="cage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__cagedetail__feed__5441852A">
+          <End Type="deneciaEntities1.feed" Role="feed" Multiplicity="0..1" />
+          <End Type="deneciaEntities1.cagedetails" Role="cagedetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="feed">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cagedetails">
+              <PropertyRef Name="feed" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__messages__msgfro__4AB81AF0">
+          <End Type="deneciaEntities1.employee" Role="employee" Multiplicity="0..1" />
+          <End Type="deneciaEntities1.messages" Role="messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="messages">
+              <PropertyRef Name="msgfrom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__messages__msgto__4BAC3F29">
+          <End Type="deneciaEntities1.employee" Role="employee" Multiplicity="0..1" />
+          <End Type="deneciaEntities1.messages" Role="messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="messages">
+              <PropertyRef Name="msgto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__products__catego__6FE99F9F">
+          <End Type="deneciaEntities1.productdetails" Role="productdetails" Multiplicity="0..1" />
+          <End Type="deneciaEntities1.products" Role="products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productdetails">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="products">
+              <PropertyRef Name="category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__products__manufa__71D1E811">
+          <End Type="deneciaEntities1.productdetails" Role="productdetails" Multiplicity="0..1" />
+          <End Type="deneciaEntities1.products" Role="products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productdetails">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="products">
+              <PropertyRef Name="manufacturer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__products__model__6EF57B66">
+          <End Type="deneciaEntities1.productdetails" Role="productdetails" Multiplicity="0..1" />
+          <End Type="deneciaEntities1.products" Role="products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productdetails">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="products">
+              <PropertyRef Name="model" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__products__vendor__70DDC3D8">
+          <End Type="deneciaEntities1.productdetails" Role="productdetails" Multiplicity="0..1" />
+          <End Type="deneciaEntities1.products" Role="products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productdetails">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="products">
+              <PropertyRef Name="vendor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__stock__productid__03F0984C">
+          <End Type="deneciaEntities1.products" Role="products" Multiplicity="0..1" />
+          <End Type="deneciaEntities1.stock" Role="stock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="stock">
+              <PropertyRef Name="productid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="orderpurchase">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="prodid" />
+          <Property Type="String" Name="reason" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="quantity" />
+          <Property Type="Double" Name="totalprice" />
+          <Property Type="String" Name="notes" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="emp" />
+          <Property Type="DateTime" Name="adddate" Precision="0" />
+          <NavigationProperty Name="employee" Relationship="deneciaEntities1.FK__orderpurcha__emp__0F624AF8" FromRole="orderpurchase" ToRole="employee" />
+          <NavigationProperty Name="products" Relationship="deneciaEntities1.FK__orderpurc__prodi__0E6E26BF" FromRole="orderpurchase" ToRole="products" />
+        </EntityType>
+        <EntityType Name="ordersales">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="productid" />
+          <Property Type="String" Name="reason" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="quantity" />
+          <Property Type="Double" Name="totalprice" />
+          <Property Type="Int32" Name="empid" />
+          <Property Type="String" Name="notes" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="addate" Precision="0" />
+          <NavigationProperty Name="employee" Relationship="deneciaEntities1.FK__ordersale__empid__1332DBDC" FromRole="ordersales" ToRole="employee" />
+          <NavigationProperty Name="products" Relationship="deneciaEntities1.FK__ordersale__produ__123EB7A3" FromRole="ordersales" ToRole="products" />
+        </EntityType>
+        <EntityType Name="warehousepurchase">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="prodid" />
+          <Property Type="String" Name="reason" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="quantity" />
+          <Property Type="Double" Name="totalprice" />
+          <Property Type="String" Name="notes" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="emp" />
+          <Property Type="DateTime" Name="adddate" Precision="0" />
+          <NavigationProperty Name="employee" Relationship="deneciaEntities1.FK__warehousepu__emp__07C12930" FromRole="warehousepurchase" ToRole="employee" />
+          <NavigationProperty Name="products" Relationship="deneciaEntities1.FK__warehouse__prodi__06CD04F7" FromRole="warehousepurchase" ToRole="products" />
+        </EntityType>
+        <EntityType Name="warehousesales">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="productid" />
+          <Property Type="String" Name="reason" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="quantity" />
+          <Property Type="Double" Name="totalprice" />
+          <Property Type="Int32" Name="empid" />
+          <Property Type="String" Name="notes" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="addate" Precision="0" />
+          <NavigationProperty Name="employee" Relationship="deneciaEntities1.FK__warehouse__empid__0B91BA14" FromRole="warehousesales" ToRole="employee" />
+          <NavigationProperty Name="products" Relationship="deneciaEntities1.FK__warehouse__produ__0A9D95DB" FromRole="warehousesales" ToRole="products" />
+        </EntityType>
+        <Association Name="FK__orderpurcha__emp__0F624AF8">
+          <End Type="deneciaEntities1.employee" Role="employee" Multiplicity="0..1" />
+          <End Type="deneciaEntities1.orderpurchase" Role="orderpurchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="orderpurchase">
+              <PropertyRef Name="emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ordersale__empid__1332DBDC">
+          <End Type="deneciaEntities1.employee" Role="employee" Multiplicity="0..1" />
+          <End Type="deneciaEntities1.ordersales" Role="ordersales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ordersales">
+              <PropertyRef Name="empid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__warehouse__empid__0B91BA14">
+          <End Type="deneciaEntities1.employee" Role="employee" Multiplicity="0..1" />
+          <End Type="deneciaEntities1.warehousesales" Role="warehousesales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="warehousesales">
+              <PropertyRef Name="empid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__warehousepu__emp__07C12930">
+          <End Type="deneciaEntities1.employee" Role="employee" Multiplicity="0..1" />
+          <End Type="deneciaEntities1.warehousepurchase" Role="warehousepurchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="warehousepurchase">
+              <PropertyRef Name="emp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__orderpurc__prodi__0E6E26BF">
+          <End Type="deneciaEntities1.products" Role="products" Multiplicity="0..1" />
+          <End Type="deneciaEntities1.orderpurchase" Role="orderpurchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="orderpurchase">
+              <PropertyRef Name="prodid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ordersale__produ__123EB7A3">
+          <End Type="deneciaEntities1.products" Role="products" Multiplicity="0..1" />
+          <End Type="deneciaEntities1.ordersales" Role="ordersales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ordersales">
+              <PropertyRef Name="productid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__warehouse__prodi__06CD04F7">
+          <End Type="deneciaEntities1.products" Role="products" Multiplicity="0..1" />
+          <End Type="deneciaEntities1.warehousepurchase" Role="warehousepurchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="warehousepurchase">
+              <PropertyRef Name="prodid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__warehouse__produ__0A9D95DB">
+          <End Type="deneciaEntities1.products" Role="products" Multiplicity="0..1" />
+          <End Type="deneciaEntities1.warehousesales" Role="warehousesales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="warehousesales">
+              <PropertyRef Name="productid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="qtype">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="types" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="qualityofwater" Relationship="deneciaEntities1.FK__qualityof__quali__1CBC4616" FromRole="qtype" ToRole="qualityofwater" />
+        </EntityType>
+        <EntityType Name="qualityofwater">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="cage" />
+          <Property Type="String" Name="watercolor" MaxLength="900" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="qualitydet" />
+          <Property Type="DateTime" Name="adddate" Precision="0" />
+          <NavigationProperty Name="cage1" Relationship="deneciaEntities1.FK__qualityofw__cage__1BC821DD" FromRole="qualityofwater" ToRole="cage" />
+          <NavigationProperty Name="qtype" Relationship="deneciaEntities1.FK__qualityof__quali__1CBC4616" FromRole="qualityofwater" ToRole="qtype" />
+        </EntityType>
+        <Association Name="FK__qualityofw__cage__1BC821DD">
+          <End Type="deneciaEntities1.cage" Role="cage" Multiplicity="0..1" />
+          <End Type="deneciaEntities1.qualityofwater" Role="qualityofwater" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cage">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="qualityofwater">
+              <PropertyRef Name="cage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__qualityof__quali__1CBC4616">
+          <End Type="deneciaEntities1.qtype" Role="qtype" Multiplicity="0..1" />
+          <End Type="deneciaEntities1.qualityofwater" Role="qualityofwater" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="qtype">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="qualityofwater">
+              <PropertyRef Name="qualitydet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="checklist">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="listitem" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="isdone" />
+          <Property Type="DateTime" Name="itemdate" Precision="0" />
+        </EntityType>
+        <EntityType Name="todolist">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="startdate" Precision="3" />
+          <Property Type="DateTime" Name="enddate" Precision="3" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="deneciaEntitiesStoreContainer" CdmEntityContainer="deneciaEntities">
+          <EntitySetMapping Name="attendance">
+            <EntityTypeMapping TypeName="deneciaEntities1.attendance">
+              <MappingFragment StoreEntitySet="attendance">
+                <ScalarProperty Name="times" ColumnName="times" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="adddate" ColumnName="adddate" />
+                <ScalarProperty Name="supervisorname" ColumnName="supervisorname" />
+                <ScalarProperty Name="empstatus" ColumnName="empstatus" />
+                <ScalarProperty Name="emptime" ColumnName="emptime" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cage">
+            <EntityTypeMapping TypeName="deneciaEntities1.cage">
+              <MappingFragment StoreEntitySet="cage">
+                <ScalarProperty Name="times" ColumnName="times" />
+                <ScalarProperty Name="dates" ColumnName="dates" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="gainedfish" ColumnName="gainedfish" />
+                <ScalarProperty Name="sources" ColumnName="sources" />
+                <ScalarProperty Name="feed" ColumnName="feed" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cagedetails">
+            <EntityTypeMapping TypeName="deneciaEntities1.cagedetails">
+              <MappingFragment StoreEntitySet="cagedetails">
+                <ScalarProperty Name="times" ColumnName="times" />
+                <ScalarProperty Name="dates" ColumnName="dates" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="weights" ColumnName="weights" />
+                <ScalarProperty Name="gainedfish" ColumnName="gainedfish" />
+                <ScalarProperty Name="lostfish" ColumnName="lostfish" />
+                <ScalarProperty Name="feed" ColumnName="feed" />
+                <ScalarProperty Name="cage" ColumnName="cage" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="employee">
+            <EntityTypeMapping TypeName="deneciaEntities1.employee">
+              <MappingFragment StoreEntitySet="employee">
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="jobtitle" ColumnName="jobtitle" />
+                <ScalarProperty Name="hdate" ColumnName="hdate" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="cellphone" ColumnName="cellphone" />
+                <ScalarProperty Name="telephone" ColumnName="telephone" />
+                <ScalarProperty Name="pw" ColumnName="pw" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="feed">
+            <EntityTypeMapping TypeName="deneciaEntities1.feed">
+              <MappingFragment StoreEntitySet="feed">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="messages">
+            <EntityTypeMapping TypeName="deneciaEntities1.messages">
+              <MappingFragment StoreEntitySet="messages">
+                <ScalarProperty Name="msgdate" ColumnName="msgdate" />
+                <ScalarProperty Name="messages1" ColumnName="messages" />
+                <ScalarProperty Name="msgsubject" ColumnName="msgsubject" />
+                <ScalarProperty Name="msgto" ColumnName="msgto" />
+                <ScalarProperty Name="msgfrom" ColumnName="msgfrom" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="productdetails">
+            <EntityTypeMapping TypeName="deneciaEntities1.productdetails">
+              <MappingFragment StoreEntitySet="productdetails">
+                <ScalarProperty Name="manufacturer" ColumnName="manufacturer" />
+                <ScalarProperty Name="vendor" ColumnName="vendor" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="deneciaEntities1.products">
+              <MappingFragment StoreEntitySet="products">
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="manufacturer" ColumnName="manufacturer" />
+                <ScalarProperty Name="vendor" ColumnName="vendor" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="unitprice" ColumnName="unitprice" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="qualitydet">
+            <EntityTypeMapping TypeName="deneciaEntities1.qualitydet">
+              <MappingFragment StoreEntitySet="qualitydet">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stock">
+            <EntityTypeMapping TypeName="deneciaEntities1.stock">
+              <MappingFragment StoreEntitySet="stock">
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="productid" ColumnName="productid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tasks">
+            <EntityTypeMapping TypeName="deneciaEntities1.tasks">
+              <MappingFragment StoreEntitySet="tasks">
+                <ScalarProperty Name="taskdate" ColumnName="taskdate" />
+                <ScalarProperty Name="messages" ColumnName="messages" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_msg">
+            <EntityTypeMapping TypeName="deneciaEntities1.vw_msg">
+              <MappingFragment StoreEntitySet="vw_msg">
+                <ScalarProperty Name="toname" ColumnName="toname" />
+                <ScalarProperty Name="tocode" ColumnName="tocode" />
+                <ScalarProperty Name="fromcode" ColumnName="fromcode" />
+                <ScalarProperty Name="code" ColumnName="code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orderpurchase">
+            <EntityTypeMapping TypeName="deneciaEntities1.orderpurchase">
+              <MappingFragment StoreEntitySet="orderpurchase">
+                <ScalarProperty Name="adddate" ColumnName="adddate" />
+                <ScalarProperty Name="emp" ColumnName="emp" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="totalprice" ColumnName="totalprice" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="reason" ColumnName="reason" />
+                <ScalarProperty Name="prodid" ColumnName="prodid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ordersales">
+            <EntityTypeMapping TypeName="deneciaEntities1.ordersales">
+              <MappingFragment StoreEntitySet="ordersales">
+                <ScalarProperty Name="addate" ColumnName="addate" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="empid" ColumnName="empid" />
+                <ScalarProperty Name="totalprice" ColumnName="totalprice" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="reason" ColumnName="reason" />
+                <ScalarProperty Name="productid" ColumnName="productid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="warehousepurchase">
+            <EntityTypeMapping TypeName="deneciaEntities1.warehousepurchase">
+              <MappingFragment StoreEntitySet="warehousepurchase">
+                <ScalarProperty Name="adddate" ColumnName="adddate" />
+                <ScalarProperty Name="emp" ColumnName="emp" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="totalprice" ColumnName="totalprice" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="reason" ColumnName="reason" />
+                <ScalarProperty Name="prodid" ColumnName="prodid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="warehousesales">
+            <EntityTypeMapping TypeName="deneciaEntities1.warehousesales">
+              <MappingFragment StoreEntitySet="warehousesales">
+                <ScalarProperty Name="addate" ColumnName="addate" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="empid" ColumnName="empid" />
+                <ScalarProperty Name="totalprice" ColumnName="totalprice" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="reason" ColumnName="reason" />
+                <ScalarProperty Name="productid" ColumnName="productid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="qtype">
+            <EntityTypeMapping TypeName="deneciaEntities1.qtype">
+              <MappingFragment StoreEntitySet="qtype">
+                <ScalarProperty Name="types" ColumnName="types" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="qualityofwater">
+            <EntityTypeMapping TypeName="deneciaEntities1.qualityofwater">
+              <MappingFragment StoreEntitySet="qualityofwater">
+                <ScalarProperty Name="adddate" ColumnName="adddate" />
+                <ScalarProperty Name="qualitydet" ColumnName="qualitydet" />
+                <ScalarProperty Name="watercolor" ColumnName="watercolor" />
+                <ScalarProperty Name="cage" ColumnName="cage" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="checklist">
+            <EntityTypeMapping TypeName="deneciaEntities1.checklist">
+              <MappingFragment StoreEntitySet="checklist">
+                <ScalarProperty Name="itemdate" ColumnName="itemdate" />
+                <ScalarProperty Name="isdone" ColumnName="isdone" />
+                <ScalarProperty Name="listitem" ColumnName="listitem" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="todolist">
+            <EntityTypeMapping TypeName="deneciaEntities1.todolist">
+              <MappingFragment StoreEntitySet="todolist">
+                <ScalarProperty Name="enddate" ColumnName="enddate" />
+                <ScalarProperty Name="startdate" ColumnName="startdate" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

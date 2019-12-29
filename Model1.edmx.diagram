@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c6843009aad44b71b51e827a4af20b01" Name="Diagram1" ZoomLevel="100">
+        <EntityTypeShape EntityType="deneciaEntities1.attendance" Width="1.5" PointX="7.8930612056949467" PointY="0.26971603942556122" />
+        <EntityTypeShape EntityType="deneciaEntities1.cage" Width="1.5" PointX="6.6431078438847821" PointY="29.5779685813831" />
+        <EntityTypeShape EntityType="deneciaEntities1.cagedetails" Width="1.5" PointX="3.3505594950870421" PointY="20.717504794112177" />
+        <EntityTypeShape EntityType="deneciaEntities1.employee" Width="1.5" PointX="8.375" PointY="10.5" />
+        <EntityTypeShape EntityType="deneciaEntities1.feed" Width="1.5" PointX="5.0936579169210319" PointY="18.825112604920339" />
+        <EntityTypeShape EntityType="deneciaEntities1.messages" Width="1.5" PointX="0.70501680146205092" PointY="30.461581750987833" />
+        <EntityTypeShape EntityType="deneciaEntities1.productdetails" Width="1.5" PointX="5.9130476144668869" PointY="12.11359611717686" />
+        <EntityTypeShape EntityType="deneciaEntities1.products" Width="1.5" PointX="0.2623854541510276" PointY="10.704856803037625" />
+        <EntityTypeShape EntityType="deneciaEntities1.qualitydet" Width="1.5" PointX="7.087410017423057" PointY="17.476144351752541" />
+        <EntityTypeShape EntityType="deneciaEntities1.stock" Width="1.5" PointX="10.877784138022822" PointY="7.85200566419028" />
+        <EntityTypeShape EntityType="deneciaEntities1.tasks" Width="1.5" PointX="3" PointY="30.5" />
+        <EntityTypeShape EntityType="deneciaEntities1.vw_msg" Width="1.5" PointX="4.3281595931985226" PointY="6.8559801461435761" />
+        <AssociationConnector Association="deneciaEntities1.FK__attendanc__empti__571DF1D5" />
+        <AssociationConnector Association="deneciaEntities1.FK__attendanc__super__5812160E" />
+        <AssociationConnector Association="deneciaEntities1.FK__cage__feed__5070F446" />
+        <AssociationConnector Association="deneciaEntities1.FK__cagedetail__cage__534D60F1" />
+        <AssociationConnector Association="deneciaEntities1.FK__cagedetail__feed__5441852A" />
+        <AssociationConnector Association="deneciaEntities1.FK__messages__msgfro__4AB81AF0" />
+        <AssociationConnector Association="deneciaEntities1.FK__messages__msgto__4BAC3F29" />
+        <AssociationConnector Association="deneciaEntities1.FK__products__catego__6FE99F9F" />
+        <AssociationConnector Association="deneciaEntities1.FK__products__manufa__71D1E811" />
+        <AssociationConnector Association="deneciaEntities1.FK__products__model__6EF57B66" />
+        <AssociationConnector Association="deneciaEntities1.FK__products__vendor__70DDC3D8" />
+        <AssociationConnector Association="deneciaEntities1.FK__stock__productid__03F0984C" />
+        <EntityTypeShape EntityType="deneciaEntities1.orderpurchase" Width="1.5" PointX="3.3664757178008911" PointY="7.8930480367937346" />
+        <EntityTypeShape EntityType="deneciaEntities1.ordersales" Width="1.5" PointX="9.63906002307267" PointY="4.5461510292003631" />
+        <EntityTypeShape EntityType="deneciaEntities1.warehousepurchase" Width="1.5" PointX="5.2763378085924018" PointY="12.039554914478005" />
+        <EntityTypeShape EntityType="deneciaEntities1.warehousesales" Width="1.5" PointX="6.4739547066734886" PointY="14.84586756622692" />
+        <AssociationConnector Association="deneciaEntities1.FK__orderpurcha__emp__0F624AF8" />
+        <AssociationConnector Association="deneciaEntities1.FK__ordersale__empid__1332DBDC" />
+        <AssociationConnector Association="deneciaEntities1.FK__warehouse__empid__0B91BA14" />
+        <AssociationConnector Association="deneciaEntities1.FK__warehousepu__emp__07C12930" />
+        <AssociationConnector Association="deneciaEntities1.FK__orderpurc__prodi__0E6E26BF" />
+        <AssociationConnector Association="deneciaEntities1.FK__ordersale__produ__123EB7A3" />
+        <AssociationConnector Association="deneciaEntities1.FK__warehouse__prodi__06CD04F7" />
+        <AssociationConnector Association="deneciaEntities1.FK__warehouse__produ__0A9D95DB" />
+        <EntityTypeShape EntityType="deneciaEntities1.qtype" Width="1.5" PointX="6.25" PointY="24" />
+        <EntityTypeShape EntityType="deneciaEntities1.qualityofwater" Width="1.5" PointX="1.2656012686274951" PointY="27.66659238732727" />
+        <AssociationConnector Association="deneciaEntities1.FK__qualityofw__cage__1BC821DD" />
+        <AssociationConnector Association="deneciaEntities1.FK__qualityof__quali__1CBC4616" />
+        <EntityTypeShape EntityType="deneciaEntities1.checklist" Width="1.5" PointX="2.8684937911427086" PointY="9.8019666121350451" />
+        <EntityTypeShape EntityType="deneciaEntities1.todolist" Width="1.5" PointX="3.7215793932422905" PointY="10.861257170728061" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
